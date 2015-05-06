@@ -7,10 +7,58 @@
     <script src="src/knock-integration.js"></script>
 
     <script>
-        knock.init('newcompany');
+        function openSpecificListing(event){
+            event.preventDefault();
+
+            var listingId = document.getElementById('listingIdInput').value;
+            knock.open(listingId);
+        }
+
+        var queryDict = {};
+        location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]});
+
+        var companyId = queryDict.companyName || 'newcompany';
+        knock.init(companyId);
+
+        var ensureDocReadyInterval = setInterval(function () {
+            if (document.readyState !== 'complete'){
+                return;
+            }
+
+            clearInterval( ensureDocReadyInterval );
+
+            document.getElementById('companyIdDisplay').innerText = companyId;
+        }, 100 );
     </script>
+
+    <style>
+        .body-content{
+            text-align: center;
+            font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        }
+    </style>
 </head>
 <body>
-    <a href onclick="knock.open('6dB6p5jpYZz7L9Jd'); event.preventDefault();">Test me</a>
+<div class="body-content">
+    <h2>Your Company's Website!</h2>
+    <h3>Company ID: <span id="companyIdDisplay"></span></h3>
+    <h4>Place 'companyName={companyName}' in the URL to change.</h4>
+    <hr />
+    <div>
+        <strong><a href onclick="knock.open(); event.preventDefault();">Show off your listings with knock.open();</a></strong>
+    </div>
+    <br />
+    OR
+    <br />
+    <br />
+    <div>
+        <strong>Show off a specific listing with knock.open(listingId);</strong>
+    </div>
+    <br />
+    <div>
+        <label for="listingIdInput">Listing ID: </label><input id="listingIdInput" />
+        <a href onclick="openSpecificListing(event);">Open listing</a>
+    </div>
+</div>
 </body>
 </html>
