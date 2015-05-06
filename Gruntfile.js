@@ -21,14 +21,6 @@ module.exports = function(grunt){
                         'knockHost': 'http://stage.knockrentals.com'
                     }
                 }
-            },
-            dev: {
-                options: {
-                    variables: {
-                        'cssFileUrl': './build/knock-integration-<%= pkg.version %>.min.css',
-                        'knockHost': 'http://localhost:9000'
-                    }
-                }
             }
         },
         replace: {
@@ -100,7 +92,6 @@ module.exports = function(grunt){
 
     grunt.registerTask('build', ['config:prod', 'uglify', 'cssmin', 'replace']);
     grunt.registerTask('build:stage', ['config:stage', 'uglify', 'cssmin', 'replace']);
-    grunt.registerTask('build:dev', ['config:dev', 'uglify', 'cssmin', 'replace']);
 
     grunt.registerTask('deploy:stage', ['build:stage', 'aws_s3:stage']);
     grunt.registerTask('deploy:prod', ['build', 'aws_s3:prod']);
