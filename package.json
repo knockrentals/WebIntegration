@@ -2,7 +2,7 @@
   "name": "WebIntegration",
   "version": "1.0.0",
   "description": "3rd party integration library for Knock",
-  "main": "knockIntegration.js",
+  "main": "knock-integration.js",
   "dependencies": {},
   "devDependencies": {
     "grunt": "0.4.5",

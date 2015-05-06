@@ -5,7 +5,7 @@ module.exports = function(grunt){
             prod: {
                 options: {
                     variables: {
-                        'cssFileUrl': 'https://s3.amazonaws.com/knock-integration/prod/<%= pkg.version %>/knock-integration-<%= pkg.version %>.min.css',
+                        'cssFileUrl': 'https://s3.amazonaws.com/prod-knock-integration/<%= pkg.version %>/knock-integration-<%= pkg.version %>.min.css',
                         'knockHost': 'http://knockrentals.com'
                     }
                 }
@@ -13,7 +13,7 @@ module.exports = function(grunt){
             stage: {
                 options: {
                     variables: {
-                        'cssFileUrl': 'https://s3.amazonaws.com/knock-integration/stage/<%= pkg.version %>/knock-integration-<%= pkg.version %>.min.css',
+                        'cssFileUrl': 'https://s3.amazonaws.com/stage-knock-integration/<%= pkg.version %>/knock-integration-<%= pkg.version %>.min.css',
                         'knockHost': 'http://stage.knockrentals.com'
                     }
                 }
