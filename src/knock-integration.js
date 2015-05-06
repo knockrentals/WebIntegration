@@ -4,7 +4,7 @@
     function injectCSS(){
         var link = document.createElement('link');
         // cssFileUrl is injected by grunt based on environment
-        link.href = '@@cssFileUrl' || './build/knock-integration.css';
+        link.href = '@@cssFileUrl' || './build/knock-integration.min.css';
         link.type = 'text/css';
         link.rel = 'stylesheet';
         link.media = 'screen,print';
