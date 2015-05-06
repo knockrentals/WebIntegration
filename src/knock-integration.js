@@ -4,7 +4,13 @@
     function injectCSS(){
         var link = document.createElement('link');
         // cssFileUrl is injected by grunt based on environment
-        link.href = '@@cssFileUrl' || './build/knock-integration.css';
+        var cssFileUrl = '@@cssFileUrl';
+
+        if (cssFileUrl.indexOf('@@') === 0){
+            cssFileUrl = './src/knock-integration.css';
+        }
+
+        link.href = cssFileUrl;
         link.type = 'text/css';
         link.rel = 'stylesheet';
         link.media = 'screen,print';
@@ -47,7 +53,10 @@
                 }
 
                 // knockHost is injected by grunt based on environment
-                var url = '@@knockHost' || 'http://localhost:9000';
+                var url = '@@knockHost' || '';
+                if (url.indexOf('@@') === 0){
+                    url = 'http://localhost:9000';
+                }
 
                 if (listingId){
                     url += '/listing/'+listingId;

@@ -14,6 +14,8 @@ knock.open(); // opens a page showing all of your company's listings for selecti
 
 ##Development
 
+You must first run `npm install` to install grunt and its dependencies.
+
 ###Grunt
 
 ####Builds
@@ -24,6 +26,8 @@ Stage: `grunt build:stage`
 
 Dev: `grunt build:dev`
 
-###TO-DO
+####Deployment
 
-Upload to s3 via  `grunt deploy:environment`
+Prod: `grunt deploy:prod`
+
+Stage: `grunt deploy:stage`
