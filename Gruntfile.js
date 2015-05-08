@@ -10,7 +10,7 @@ module.exports = function(grunt){
                 options: {
                     variables: {
                         'cssFileUrl': 'https://s3.amazonaws.com/<%= deployBuckets.prod %>/knock-integration-<%= pkg.version %>.min.css',
-                        'knockHost': 'http://knockrentals.com'
+                        'knockHost': 'https://knockrentals.com'
                     }
                 }
             },
@@ -18,7 +18,7 @@ module.exports = function(grunt){
                 options: {
                     variables: {
                         'cssFileUrl': 'https://s3.amazonaws.com/<%= deployBuckets.stage %>/knock-integration-<%= pkg.version %>.min.css',
-                        'knockHost': 'http://stage.knockrentals.com'
+                        'knockHost': 'https://stage.knockrentals.com'
                     }
                 }
             }
