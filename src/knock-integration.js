@@ -61,7 +61,7 @@
                 if (listingId){
                     url += '/listing/'+listingId;
                 } else {
-                    url += '/company/'+this.companyId+'/listings';
+                    url += '/company/'+this.companyId;
                 }
 
                 url += '?isExternal=true&companyName='+this.companyId;
