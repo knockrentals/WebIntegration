@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Knock Web integration demo</title>
+    <script src="https://s3.amazonaws.com/prod-knock-integration/knock-integration-1.0.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Integration Demo</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h4>Integrate Knock into your site in 3 simple steps</h4>
+        <ol>
+            <li>
+                Include the integration library
+                <pre><code>&lt;script src=&quot;https://s3.amazonaws.com/prod-knock-integration/knock-integration-1.0.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                <pre><code>knock.init('demo'); // Replace demo with your company id</code></pre>
+            </li>
+            <li>
+                <a href="#" onclick="knock.open();">opens all listings in an iframe</a>
+                <pre><code>knock.open(); // no parameter </code></pre>
+            </li>
+            <li>
+                <a href="#" onclick="knock.open('5eVPYJxvYwVN3N5b');">knock.open("listingid") - opens listing Le36VKmw0RyPzmQd in an iframe</a>
+                <pre><code>knock.open('5eVPYJxvYwVN3N5b'); // 5eVPYJxvYwVN3N5b a listing id belongs to demo</code></pre>
+            </li>
+        <ol>
+      </div>
+    </div>
+
+  </body>
+  <script>
+      knock.init('knock');
+  </script>
+</html>
