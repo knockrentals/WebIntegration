@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Embedded Iframe Demo</title>
+    <link href="demo.css" rel="stylesheet" type="text/css" />
+    <style>
+        iframe{
+            width: 800px;
+            height: 500px;
+        }
+
+        @media screen and (max-width: 800px){
+            iframe{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>This is your website!</h1>
+    <iframe src="http://knockrentals.com/company/knock?isExternal=true"></iframe>
+    <h3>Code:</h3>
+    <div>&lt;iframe src=&quot;http://knockrentals.com/company/YOUR_COMPANY_ID_HERE?isExternal=true&quot;&gt;&lt;/iframe&gt;</div>
+</body>
+</html>
