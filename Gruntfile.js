@@ -11,7 +11,7 @@ module.exports = function(grunt){
                     variables: {
                         'cssFileUrl': 'https://s3.amazonaws.com/<%= deployBuckets.prod %>/knock-integration-<%= pkg.version %>.min.css',
                         'listingHost': 'https://knockrentals.com',
-                        'companyHost': 'http://knock-webschedule-prod.s3-website-us-east-1.amazonaws.com/#'
+                        'companyHost': 'https://knockrentals.github.io/Stage-WebSchedule/#'
                     }
                 }
             },
@@ -20,7 +20,7 @@ module.exports = function(grunt){
                     variables: {
                         'cssFileUrl': 'https://s3.amazonaws.com/<%= deployBuckets.stage %>/knock-integration-<%= pkg.version %>.min.css',
                         'listingHost': 'https://stage.knockrentals.com',
-                        'companyHost': 'http://knock-webschedule-stage.s3-website-us-east-1.amazonaws.com/#'
+                        'companyHost': 'https://knockrentals.github.io/Prod-WebSchedule/#'
                     }
                 }
             }
