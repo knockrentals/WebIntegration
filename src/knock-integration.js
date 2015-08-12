@@ -52,20 +52,32 @@
                     throw 'init must be called with company ID before opening modal!';
                 }
 
-                var url = listingId ? '@@listingHost' : '@@companyHost';
+                var url = '@@companyHost';
 
                 // knockHost is injected by grunt based on environment
                 if (url.indexOf('@@') === 0){
-                    url = listingId ? 'http://localhost:9000' : 'http://localhost:9100/#';
+                    url = 'http://localhost:9000';
                 }
 
                 if (listingId){
                     url += '/listing/'+listingId;
                 } else {
-                    url += '/'+this.companyId;
+                    url += '/company/'+this.companyId;
                 }
 
-                document.getElementsByClassName('knock-modal')[0].className = listingId ? 'knock-modal show' : 'knock-modal show skinny';
+                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal show';
+                document.getElementsByClassName('knock-frame')[0].src = url;
+            },
+            openScheduling: function(){
+                var url = '@@schedulingHost';
+
+                if (url.indexOf('@@') === 0){
+                    url = 'http://localhost:9100/#';
+                }
+
+                url += '/' + this.companyId;
+
+                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal show skinny';
                 document.getElementsByClassName('knock-frame')[0].src = url;
             }
         };
