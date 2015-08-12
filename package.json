@@ -1,6 +1,6 @@
 {
   "name": "WebIntegration",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "3rd party integration library for Knock",
   "main": "knock-integration.js",
   "dependencies": {},

@@ -1,12 +1,13 @@
 .knock-modal{
     position: fixed;
     top: 20px;
+    bottom: 20px;
     left: 20px;
     right: 20px;
-    bottom: 20px;
 
     background-color: #fff;
     border: 1px solid #ccc;
+    z-index: 15000
 }
 
 .knock-modal.hide{
@@ -15,6 +16,22 @@
 
 .knock-modal.show{
     display: block;
+}
+
+.knock-modal.skinny{
+    width: 400px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@media screen and (max-width: 425px){
+    .knock-modal.skinny{
+        transform: none;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
 }
 
 .knock-modal > .close-button{
@@ -26,16 +43,16 @@
     text-align: center;
     cursor: pointer;
 
-    background-color: #000;
-    color: white;
+    background-color: transparent;
+    color: #ccc;
 
     position: absolute;
-    top: -12px;
-    right: -12px;
+    top: 5px;
+    right: 5px;
 }
 
 .knock-modal > .close-button:hover{
-    color: #ccc;
+    color: #aaa;
 }
 
 .knock-modal > .knock-frame{
