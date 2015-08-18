@@ -49,6 +49,13 @@
     }
 }
 
+@media screen and (min-height: 800px) {
+    .knock-modal {
+        bottom: auto;
+        height: 780px;
+    }
+}
+
 .knock-modal > .close-button{
     border-radius: 50%;
     width: 25px;
