@@ -69,6 +69,8 @@
                     url += '/company/'+this.companyId;
                 }
 
+                url += '?isExternal=true&companyName='+this.companyId;
+
                 document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
                 document.getElementsByClassName('knock-modal')[0].className = 'knock-modal';
                 document.getElementsByClassName('knock-frame')[0].src = url;
