@@ -23,14 +23,17 @@
     }
 
     function createModal(){
+        var modalBackdrop = document.createElement('div');
+        modalBackdrop.className = 'knock-modal-backdrop hide';
+
         var modal = document.createElement('div');
-        modal.className = 'knock-modal hide';
+        modal.className = 'knock-modal';
 
         var closeButton = document.createElement('div');
         closeButton.className = 'close-button';
         closeButton.innerHTML = '&times;';
         closeButton.onclick = function(){
-            modal.className = 'knock-modal hide';
+            modalBackdrop.className = 'knock-modal-backdrop hide';
         };
 
         var iframe = document.createElement('iframe');
@@ -38,7 +41,8 @@
 
         modal.appendChild(iframe);
         modal.appendChild(closeButton);
-        document.body.appendChild(modal);
+        modalBackdrop.appendChild(modal);
+        document.body.appendChild(modalBackdrop);
     }
 
     function initializeNamespace(){
@@ -65,7 +69,8 @@
                     url += '/company/'+this.companyId;
                 }
 
-                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal show';
+                document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
+                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal';
                 document.getElementsByClassName('knock-frame')[0].src = url;
             },
             openScheduling: function(){
@@ -77,7 +82,8 @@
 
                 url += '/' + this.companyId;
 
-                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal show skinny';
+                document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
+                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal skinny';
                 document.getElementsByClassName('knock-frame')[0].src = url;
             }
         };
