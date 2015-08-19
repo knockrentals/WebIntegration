@@ -15,7 +15,7 @@
 
     <h2 class="project-tagline"></h2>
     <a href="https://github.com/knockrentals/WebIntegration" class="btn">View on GitHub</a>
-    <a href="https://s3.amazonaws.com/prod-knock-integration/knock-integration-1.0.0.min.js" class="btn">Download</a>
+    <a href="https://s3.amazonaws.com/prod-knock-integration/knock-integration-1.1.0.min.js" class="btn">Download</a>
 </section>
 
 <section class="main-content">
@@ -30,6 +30,7 @@
         <p>1) An iframe that is embedded into the page. <a href="examples/demo_embedded.html">View demo</a></p>
         <p>2) Open a modal iframe using a button or link on your site which links to your <strong>Knock company profile.</strong> <a href="examples/demo_modal_company.html">View demo</a></p>
         <p>3) Open a modal iframe using a button or link on your site which links to <strong>a specific listing.</strong> <a href="examples/demo_modal_listing.html">View demo</a></p>
+        <p>4) Open a modal iframe using a button or link on your site which links to <strong>a slimmed down scheduling interface</strong> <a href="examples/demo_modal_scheduling.html">View demo</a></p>
     </div>
 
     <div>
@@ -39,6 +40,7 @@
 knock.init('company id'); // initialize the library with your company ID
 knock.open(); // opens a modal window containing your company profile
 knock.open('listing id'); // opens a modal window containing the specified listing
+knock.openScheduling(); // opens a modal window containing a slimmed down scheduling view with all listings/floorplans
             </pre>
         </div>
     </div>
