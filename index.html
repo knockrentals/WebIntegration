@@ -23,25 +23,29 @@
         <a id="knock-web-integration-library" class="anchor" href="#knock-web-integration-library"
            aria-hidden="true"><span class="octicon octicon-link"></span></a>Knock Web Integration Library
     </h1>
+    
+    <p>First, initialize the library with your company id:</p>
+    <div class="highlight highlight-javascript">
+            <pre>
+knock.init('company id'); // initialize the library with your company ID
+            </pre>
+        </div>
 
     <p><strong>There are 4 ways to integrate Knock into your website:</strong></p>
 
     <div>
         <p>1) An iframe that is embedded into the page. <a href="examples/demo_embedded.html">View demo</a></p>
         <p>2) Open a modal iframe using a button or link on your site which links to your <strong>Knock company profile.</strong> <a href="examples/demo_modal_company.html">View demo</a></p>
-        <p>3) Open a modal iframe using a button or link on your site which links to <strong>a specific listing.</strong> <a href="examples/demo_modal_listing.html">View demo</a></p>
-        <p>4) Open a modal iframe using a button or link on your site which links to <strong>a slimmed down scheduling interface</strong> <a href="examples/demo_modal_scheduling.html">View demo</a></p>
-    </div>
-
-    <div>
-        <p>For opening modal windows within your website, use the integration library and the following calls:</p>
         <div class="highlight highlight-javascript">
-            <pre>
-knock.init('company id'); // initialize the library with your company ID
-knock.open(); // opens a modal window containing your company profile
-knock.open('listing id'); // opens a modal window containing the specified listing
-knock.openScheduling(); // opens a modal window containing a slimmed down scheduling view with all listings/floorplans
-            </pre>
+            <pre>knock.open(); // opens a modal window containing your company profile</pre>
+        </div
+        <p>3) Open a modal iframe using a button or link on your site which links to <strong>a specific listing.</strong> <a href="examples/demo_modal_listing.html">View demo</a></p>
+        <div class="highlight highlight-javascript">
+            <pre>knock.open('listing id'); // opens a modal window containing the specified listing</pre>
+        </div>
+        <p>4) Open a modal iframe using a button or link on your site which links to <strong>a slimmed down scheduling interface</strong> <a href="examples/demo_modal_scheduling.html">View demo</a></p>
+        <div class="highlight highlight-javascript">
+            <pre>knock.openScheduling(); // opens a modal window containing a slimmed down scheduling view with all listings/floorplans</pre>
         </div>
     </div>
 
