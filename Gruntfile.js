@@ -10,7 +10,8 @@ module.exports = function(grunt){
                 options: {
                     variables: {
                         'cssFileUrl': 'https://s3.amazonaws.com/<%= deployBuckets.prod %>/knock-integration-<%= pkg.version %>.min.css',
-                        'knockHost': 'https://knockrentals.com'
+                        'companyHost': 'https://knockrentals.com',
+                        'schedulingHost': 'https://knockrentals.github.io/Prod-WebSchedule/#'
                     }
                 }
             },
@@ -18,7 +19,8 @@ module.exports = function(grunt){
                 options: {
                     variables: {
                         'cssFileUrl': 'https://s3.amazonaws.com/<%= deployBuckets.stage %>/knock-integration-<%= pkg.version %>.min.css',
-                        'knockHost': 'https://stage.knockrentals.com'
+                        'companyHost': 'https://stage.knockrentals.com',
+                        'schedulingHost': 'https://knockrentals.github.io/Stage-WebSchedule/#'
                     }
                 }
             }
@@ -28,7 +30,8 @@ module.exports = function(grunt){
                 options: {
                     variables: {
                         'cssFileUrl': '<%= grunt.config.get("cssFileUrl") %>',
-                        'knockHost': '<%= grunt.config.get("knockHost") %>'
+                        'companyHost': '<%= grunt.config.get("companyHost") %>',
+                        'schedulingHost': '<%= grunt.config.get("schedulingHost") %>'
                     },
                     force: true
                 },

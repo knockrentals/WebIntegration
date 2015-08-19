@@ -34,7 +34,7 @@
     <style>
         .body-content{
             text-align: center;
-            font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+            font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, serif;
         }
     </style>
 </head>
@@ -58,6 +58,17 @@
     <div>
         <label for="listingIdInput">Listing ID: </label><input id="listingIdInput" />
         <a href onclick="openSpecificListing(event);">Open listing</a>
+    </div>
+    <br />
+    OR
+    <br />
+    <br />
+    <div>
+        <strong>Start scheduling quickly with with knock.openScheduling();</strong>
+    </div>
+    <br />
+    <div>
+        <a href onclick="knock.openScheduling(); event.preventDefault();">Open scheduling</a>
     </div>
 </div>
 </body>

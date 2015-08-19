@@ -23,22 +23,27 @@
     }
 
     function createModal(){
+        var modalBackdrop = document.createElement('div');
+        modalBackdrop.className = 'knock-modal-backdrop hide';
+
         var modal = document.createElement('div');
-        modal.className = 'knock-modal hide';
+        modal.className = 'knock-modal';
 
         var closeButton = document.createElement('div');
         closeButton.className = 'close-button';
         closeButton.innerHTML = '&times;';
         closeButton.onclick = function(){
-            modal.className = 'knock-modal hide';
+            modalBackdrop.className = 'knock-modal-backdrop hide';
         };
 
         var iframe = document.createElement('iframe');
+        iframe.setAttribute('sandbox', 'allow-top-navigation allow-scripts allow-same-origin allow-forms allow-popups');
         iframe.className = 'knock-frame';
 
         modal.appendChild(iframe);
         modal.appendChild(closeButton);
-        document.body.appendChild(modal);
+        modalBackdrop.appendChild(modal);
+        document.body.appendChild(modalBackdrop);
     }
 
     function initializeNamespace(){
@@ -52,8 +57,9 @@
                     throw 'init must be called with company ID before opening modal!';
                 }
 
+                var url = '@@companyHost';
+
                 // knockHost is injected by grunt based on environment
-                var url = '@@knockHost' || '';
                 if (url.indexOf('@@') === 0){
                     url = 'http://localhost:9000';
                 }
@@ -66,7 +72,21 @@
 
                 url += '?isExternal=true&companyName='+this.companyId;
 
-                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal show';
+                document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
+                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal';
+                document.getElementsByClassName('knock-frame')[0].src = url;
+            },
+            openScheduling: function(){
+                var url = '@@schedulingHost';
+
+                if (url.indexOf('@@') === 0){
+                    url = 'http://localhost:9100/#';
+                }
+
+                url += '/' + this.companyId;
+
+                document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
+                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal skinny';
                 document.getElementsByClassName('knock-frame')[0].src = url;
             }
         };
