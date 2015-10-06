@@ -65,9 +65,9 @@
                 }
 
                 if (listingId){
-                    url += '/listing/'+listingId;
+                    url += '/listing/'+listingId+'?s=w';
                 } else {
-                    url += '/company/'+this.companyId;
+                    url += '/company/'+this.companyId+'?s=w';
                 }
 
                 url += '?isExternal=true&companyName='+this.companyId;
