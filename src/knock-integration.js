@@ -65,12 +65,12 @@
                 }
 
                 if (listingId){
-                    url += '/listing/'+listingId+'?s=w';
+                    url += '/listing/'+listingId;
                 } else {
-                    url += '/company/'+this.companyId+'?s=w';
+                    url += '/company/'+this.companyId;
                 }
 
-                url += '?isExternal=true&companyName='+this.companyId;
+                url += '?isExternal=true&companyName='+this.companyId+'?s=w';
 
                 document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
                 document.getElementsByClassName('knock-modal')[0].className = 'knock-modal';
