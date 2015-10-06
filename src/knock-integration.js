@@ -70,7 +70,7 @@
                     url += '/company/'+this.companyId;
                 }
 
-                url += '?isExternal=true&companyName='+this.companyId+'?s=w';
+                url += '?isExternal=true&companyName='+this.companyId+'&s=w';
 
                 document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
                 document.getElementsByClassName('knock-modal')[0].className = 'knock-modal';
