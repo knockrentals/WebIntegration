@@ -37,7 +37,6 @@
         };
 
         var iframe = document.createElement('iframe');
-        iframe.setAttribute('sandbox', 'allow-top-navigation allow-scripts allow-same-origin allow-forms allow-popups');
         iframe.className = 'knock-frame';
 
         modal.appendChild(iframe);
