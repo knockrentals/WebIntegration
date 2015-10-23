@@ -11,7 +11,7 @@ module.exports = function(grunt){
                     variables: {
                         'cssFileUrl': 'https://s3.amazonaws.com/<%= deployBuckets.prod %>/knock-integration-<%= pkg.version %>.min.css',
                         'companyHost': 'https://knockrentals.com',
-                        'schedulingHost': 'https://knockrentals.github.io/Prod-WebSchedule/#'
+                        'schedulingHost': 'https://knockrentals.github.io/schedule/#'
                     }
                 }
             },
