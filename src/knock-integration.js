@@ -1,6 +1,8 @@
 (function (window) {
     'use strict';
 
+    var isMobile = window.matchMedia('(max-device-width: 960px)').matches;
+
     function injectCSS(){
         var link = document.createElement('link');
         // cssFileUrl is injected by grunt based on environment
@@ -45,6 +47,15 @@
         document.body.appendChild(modalBackdrop);
     }
 
+    function redirectToScheduling(redirectToUrl) {
+        var returnToUrl = window.location.href;
+
+        var hasQueryParams = redirectToUrl.indexOf('?') > -1;
+        var returnToAppend = hasQueryParams ? '&redirect=' : '?redirect=';
+
+        window.location.href = encodeURI(redirectToUrl + returnToAppend + returnToUrl);
+    }
+
     function initializeNamespace(){
         window.knock = {
             companyId: null,
@@ -79,14 +90,18 @@
                 var url = '@@schedulingHost';
 
                 if (url.indexOf('@@') === 0){
-                    url = 'http://localhost:9100/#';
+                    url = 'http://localhost:9000/#';
                 }
 
                 url += '/' + this.companyId;
 
-                document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
-                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal skinny';
-                document.getElementsByClassName('knock-frame')[0].src = url;
+                if (isMobile) {
+                    redirectToScheduling(url);
+                } else {
+                    document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
+                    document.getElementsByClassName('knock-modal')[0].className = 'knock-modal skinny';
+                    document.getElementsByClassName('knock-frame')[0].src = url;
+                }
             }
         };
     }
