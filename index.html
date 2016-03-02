@@ -8,52 +8,41 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 <section class="page-header">
-    <h1 class="project-name">Knock Integration Library</h1>
-
-    <h2 class="project-tagline"></h2>
-    <a href="https://github.com/knockrentals/WebIntegration" class="btn">View on GitHub</a>
-    <a href="https://s3.amazonaws.com/prod-knock-integration/knock-integration-1.1.0.min.js" class="btn">Download</a>
+    <h1 class="project-name">Knock Integration Libraries</h1>
+    <h2 class="project-tagline">Integrate our easy-to-use libraries into your website</h2>
 </section>
 
 <section class="main-content">
-    <h1>
-        <a id="knock-web-integration-library" class="anchor" href="#knock-web-integration-library"
-           aria-hidden="true"><span class="octicon octicon-link"></span></a>Knock Web Integration Library
-    </h1>
-    
-    <p><strong>First, initialize the library with your company id:</strong></p>
-    <div class="highlight highlight-javascript">
-        <pre>knock.init('company id'); // initialize the library with your company ID</pre>
-    </div>
-
-    <p><strong>There are 4 ways to integrate Knock into your website:</strong></p>
+    <h2>Step 1: Choose the right integration for you</h2>
 
     <div>
-        <p>1) An iframe that is embedded into the page. <a href="examples/demo_embedded.html">View demo</a></p>
-        <p>2) Open a modal iframe using a button or link on your site which links to your <strong>Knock company profile.</strong> <a href="examples/demo_modal_company.html">View demo</a></p>
-        <div class="highlight highlight-javascript">
-            <pre>knock.open(); // opens a modal window containing your company profile</pre>
-        </div
-        <p>3) Open a modal iframe using a button or link on your site which links to <strong>a specific listing.</strong> <a href="examples/demo_modal_listing.html">View demo</a></p>
-        <div class="highlight highlight-javascript">
-            <pre>knock.open('listing id'); // opens a modal window containing the specified listing</pre>
-        </div>
-        <p>4) Open a modal iframe using a button or link on your site which links to <strong>a slimmed down scheduling interface</strong> <a href="examples/demo_modal_scheduling.html">View demo</a></p>
-        <div class="highlight highlight-javascript">
-            <pre>knock.openScheduling(); // opens a modal window containing a slimmed down scheduling view with all listings/floorplans</pre>
-        </div>
+        <h3><i class="fa fa-arrow-right"></i> <a href="step2/doorway_step_2.html">Doorway - messaging, lead generation, and scheduling all in one!</a></h3>
+        <p>With a single code snippet, enable your users to chat with your property managers and schedule tours <strong>without ever leaving your site</strong>.</p>
+
+        <a class="demo-link" href="http://poweredbyknock.com" target="_blank"><i class="fa fa-arrow-right"></i> View demo</a>
     </div>
+
+    <hr />
 
     <div>
-        <p>If you wish to embed our UI directly into your website, you can use the following URL scheme within an iframe:</p>
-        <div class="highlight">
-            <pre>http://knockrentals.com/company/&lt;company_id&gt;?isExternal=true&amp;companyName=YOUR_COMPANY_ID_HERE</pre>
-        </div>
+        <h3><i class="fa fa-arrow-right"></i> <a href="step2/popup_step_2.html">Popup iframe - Show your users a map with all of your available properties.</a></h3>
+        <p>With almost no setup, trigger a pop up that displays all of your available properties. Requires a single script and one line of initialization. You can then wire up any button, link, or action to the popup!</p>
+
+        <a class="demo-link" href="examples/demo_modal_company.html" target="_blank"><i class="fa fa-arrow-right"></i> View demo</a>
     </div>
 
+    <hr />
+
+    <div>
+        <h3><i class="fa fa-arrow-right"></i> <a href="step2/embedded_step_2.html">Embedded iframe - A map of your available listings wherever you want!</a></h3>
+        <p>Use your company Knock URL to display your availabilities on any page on your site.</p>
+
+        <a class="demo-link" href="examples/demo_embedded.html" target="_blank"><i class="fa fa-arrow-right"></i> View demo</a>
+    </div>
 </section>
 
 

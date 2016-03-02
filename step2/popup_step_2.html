@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Knock Rentals - Web Integration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<section class="page-header">
+    <h1>Step 2: Setup your Popup integration</h1>
+</section>
+    <section class="main-content">
+        <ol>
+            <li><strong>Get your company identifier!</strong> You can find it at <a href="https://knockrentals.com/company/me/edit" target="_blank">your company profile page.</a></li>
+            <li><strong>Copy and paste</strong> a reference to our script into the '&lt;head&gt;' section of your website and initialize it with your company identifier.</li>
+            <div>
+                <pre>
+&lt;!--Include the script--&gt;
+&lt;script src="https://s3.amazonaws.com/prod-knock-integration/knock-integration-1.1.0.min.js"&gt;&lt;/script&gt;
+
+&lt;!--Initialize the script--&gt;
+&lt;script type="text/javascript"&gt;
+    knock.init('YOUR COMPANY IDENTIFIER HERE');
+&lt;/script&gt;
+                </pre>
+            </div>
+            <li><strong>Call the 'open()' function from anywhere on your page!</strong></li>
+            <div>
+                <pre>
+&lt;button on-click="knock.open();"&gt;Open Scheduling!&lt;/button&gt;
+                </pre>
+            </div>
+        </ol>
+
+        <h3>That's it, you're done!</h3>
+        <div><a href="../index.html" class="demo-link"><i class="fa fa-arrow-left"></i> Back to index</a></div>
+    </section>
+</body>
+</html>
