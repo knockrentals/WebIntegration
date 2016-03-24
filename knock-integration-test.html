@@ -14,6 +14,13 @@
             knock.open(listingId);
         }
 
+        function openSpecificCommunity(event){
+            event.preventDefault();
+
+            var communityId = document.getElementById('communityIdInput').value;
+            knock.openCommunity(communityId);
+        }
+
         var queryDict = {};
         location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]});
 
@@ -70,6 +77,18 @@
     <div>
         <a href onclick="knock.openScheduling(); event.preventDefault();">Open scheduling</a>
     </div>
+    OR
+    <br />
+    <br />
+    <div>
+        <strong>Show off a specific community with knock.openCommunity(communityId);</strong>
+    </div>
+    <br />
+    <div>
+        <label for="communityIdInput">Community ID: </label><input id="communityIdInput" />
+        <a href onclick="openSpecificCommunity(event); return false;">Open community</a>
+    </div>
+    <br />
 </div>
 </body>
 </html>

@@ -86,6 +86,29 @@
                 document.getElementsByClassName('knock-modal')[0].className = 'knock-modal';
                 document.getElementsByClassName('knock-frame')[0].src = url;
             },
+            openCommunity: function(communityId) {
+                if (!this.companyId){
+                    throw 'init must be called with company ID before opening modal!';
+                }
+
+                if (!communityId) {
+                    throw 'communityId is required!';
+                }
+
+                var url = '@@companyHost';
+
+                // knockHost is injected by grunt based on environment
+                if (url.indexOf('@@') === 0){
+                    url = 'https://localhost:9000';
+                }
+
+                url += '/community/'+communityId;
+                url += '?isExternal=true&companyName='+this.companyId+'&s=w';
+
+                document.getElementsByClassName('knock-modal-backdrop')[0].className = 'knock-modal-backdrop show';
+                document.getElementsByClassName('knock-modal')[0].className = 'knock-modal';
+                document.getElementsByClassName('knock-frame')[0].src = url;
+            },
             openScheduling: function(){
                 var url = '@@schedulingHost';
 
